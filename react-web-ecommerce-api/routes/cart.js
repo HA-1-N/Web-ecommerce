@@ -4,7 +4,9 @@ const { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin } = requir
 
 // CREATE
 
-router.post("/", verifyToken, async (req, res) => {  // verifyToken cho phép tất cả ng dùng có thể tạo cart cho riêng mình
+router.post("/",
+ verifyToken,
+ async (req, res) => {  // verifyToken cho phép tất cả ng dùng có thể tạo cart cho riêng mình
     const newCart = new Cart(req.body);
 
     try {
